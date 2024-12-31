@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use function Symfony\Component\String\u;
 
 class VinylController extends AbstractController
 {
@@ -35,7 +36,7 @@ class VinylController extends AbstractController
   #[Route('/browse/{slug}', name: 'app_browse')]
   public function browse(string $slug = null): Response
   {
-    $genre = $slug ? ucfirst(str_replace('-', ' ', $slug)) : null;
+    $genre = $slug ? u(str_replace('-', ' ', $slug))->title(true) : null;
 
     return $this->render('vinyl/browse.html.twig', [
       'genre' => $genre,
