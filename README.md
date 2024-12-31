@@ -3,3 +3,6 @@
 
 ## Run a local server ##
 `symfony serve -d`
+
+## Stop the symfony local server ##
+`symfony server:stop`
