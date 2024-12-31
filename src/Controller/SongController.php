@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
 class SongController extends AbstractController
 {
 
-  #[Route('/api/songs/{id<\d+>}', name: 'app_song_getsong', methods: ['GET'])]
+  #[Route('/api/songs/{id<\d+>}', name: 'api_songs_get_one', methods: ['GET'])]
   public function getSong(int $id, LoggerInterface $logger): Response {
 
     $song = [
